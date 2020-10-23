@@ -155,3 +155,68 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.active {
+  border-bottom: 2px solid #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+header h1 {
+  width: 64px;
+}
+
+header nav a {
+  margin-left: 10px;
+  padding-bottom: 5px;
+}
+
+div.photo {
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+}
+
+section.photos {
+  text-align: center;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+div.large {
+  width: 400px;
+}
+
+div.small {
+  width: 250px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+footer nav {
+  display: flex;
+  align-items: center;
+}
+
+footer nav a {
+  margin-top: -4px;
+}
+
+footer nav img {
+  width: 20px;
+  margin-left: 20px;
+}
