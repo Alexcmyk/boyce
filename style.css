@@ -160,10 +160,6 @@ a {
   text-decoration: none;
 }
 
-a.active {
-  border-bottom: 2px solid #fff;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -173,7 +169,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 header h1 {
@@ -183,6 +179,16 @@ header h1 {
 header nav a {
   margin-left: 10px;
   padding-bottom: 5px;
+  border-bottom: solid 2px rgba(0, 0, 0, 0);
+  transition: border-color 300ms ease-in;
+}
+
+header nav a:hover {
+  border-color: #555;
+}
+
+header nav a.active {
+  border-color: #fff;
 }
 
 div.overlay {
@@ -194,6 +200,7 @@ div.overlay {
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
   transition: opacity 300ms ease-in-out;
+  z-index: 2;
 }
 
 div.overlay h2 {
@@ -208,6 +215,14 @@ div.photo {
   position: relative;
   width: 300px;
   margin: 15px;
+}
+
+div.photo img {
+  transition: filter 300ms;
+}
+
+div.photo:hover img {
+  filter: grayscale(100%);
 }
 
 div.photo:hover div.overlay {
@@ -232,6 +247,46 @@ div.small {
   width: 250px;
 }
 
+/* List page styles */
+
+section.list a img {
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+section.list {
+  max-width: 640px;
+  margin: 150px auto 75px auto;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+section.list a:hover img {
+  opacity: 1;
+}
+
+footer.list-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+section.list a::after {
+  content: "/";
+}
+
+section.list a:last-child::after {
+  content: "";
+}
+/* End of list page styles */
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -251,4 +306,48 @@ footer nav a {
 footer nav img {
   width: 20px;
   margin-left: 20px;
+}
+/* Media Queries */
+
+@media (max-width: 650px) {
+  section.list {
+    padding: 0 30px;
+    font-size: 40px;
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  section.list a img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 370px) {
+  footer.list-footer {
+    position: initial;
+  }
+}
+
+@media (max-width: 275px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0 auto;
+  }
+
+  header nav {
+    margin-top: 20px;
+  }
+
+  section.list {
+    margin-top: 200px;
+  }
+
+  section.list a img {
+    max-width: 200px;
+  }
 }
