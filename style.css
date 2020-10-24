@@ -149,11 +149,13 @@ select {
 /* End of reset */
 
 body {
+  position: relative;
   background-color: #000;
   color: #fff;
   font-family: "Work Sans";
   font-size: 16px;
   line-height: 1.5;
+  min-height: 100vh;
 }
 a {
   color: #fff;
@@ -265,6 +267,7 @@ section.list {
   margin: 150px auto 75px auto;
   font-size: 48px;
   line-height: 1.2;
+  padding-bottom: 2.5rem;
 }
 
 section.list a:hover img {
@@ -273,7 +276,6 @@ section.list a:hover img {
 
 footer.list-footer {
   position: absolute;
-  left: 0;
   bottom: 0;
   width: 100%;
 }
