@@ -169,6 +169,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 header h1 {
@@ -180,18 +185,41 @@ header nav a {
   padding-bottom: 5px;
 }
 
+div.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+div.overlay h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
 div.photo {
-  /* display: inline-block; */
+  position: relative;
   width: 300px;
-  margin: 10px;
+  margin: 15px;
+}
+
+div.photo:hover div.overlay {
+  opacity: 1;
 }
 
 section.photos {
+  max-width: 1080px;
+  margin: 150px auto 100px auto;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  max-width: 1080px;
-  margin: 0 auto;
   justify-content: center;
 }
 
